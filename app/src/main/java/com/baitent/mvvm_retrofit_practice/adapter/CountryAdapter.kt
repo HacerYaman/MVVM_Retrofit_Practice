@@ -28,4 +28,8 @@ class CountryAdapter(val countyList: ArrayList<Country>): RecyclerView.Adapter<C
     override fun getItemCount(): Int {
         return countyList.size
     }
+
+    fun updateCountries(newList: List<Country>){
+
+    }
 }
