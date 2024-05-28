@@ -37,6 +37,10 @@ android {
 
 dependencies {
 
+    val retrofitVersion = "2.3.0"
+    val rxJavaVersion = "2.1.1"
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -48,4 +52,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation ("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation ("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+    implementation ("com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion")
+
+    implementation ("io.reactivex.rxjava2:rxjava:$rxJavaVersion")
+    implementation( "io.reactivex.rxjava2:rxandroid:$rxJavaVersion")
+
 }
