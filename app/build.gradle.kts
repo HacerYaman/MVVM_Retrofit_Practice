@@ -39,6 +39,8 @@ dependencies {
 
     val retrofitVersion = "2.3.0"
     val rxJavaVersion = "2.1.1"
+    val glideVersion = "4.14.2"
+
 
 
     implementation(libs.androidx.core.ktx)
@@ -59,5 +61,8 @@ dependencies {
 
     implementation ("io.reactivex.rxjava2:rxjava:$rxJavaVersion")
     implementation( "io.reactivex.rxjava2:rxandroid:$rxJavaVersion")
+
+    implementation ("com.github.bumptech.glide:glide:$glideVersion")
+
 
 }

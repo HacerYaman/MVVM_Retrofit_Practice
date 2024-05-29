@@ -11,9 +11,9 @@ import io.reactivex.schedulers.Schedulers
 
 class FeedViewModel : ViewModel() {
 
-    private val countries = MutableLiveData<List<Country>>()
-    private val countryError = MutableLiveData<Boolean>()
-    private val countryLoading = MutableLiveData<Boolean>()
+     val countries = MutableLiveData<List<Country>>()
+     val countryError = MutableLiveData<Boolean>()
+     val countryLoading = MutableLiveData<Boolean>()
 
     private val disposable = CompositeDisposable()
     private val countryApiService = CountryApiService()
