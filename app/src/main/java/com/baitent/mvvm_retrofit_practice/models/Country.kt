@@ -21,7 +21,13 @@ import com.google.gson.annotations.SerializedName
 )*/
 
 //ROOM config
+/*
 
+ENTITY
+Veritabanı tablosunu temsil eder.
+Her Entity bir veritabanı tablosunu ifade eder ve her sütun bir alanı ifade eder.
+
+*/
 @Entity
 data class Country(
 
@@ -36,9 +42,9 @@ data class Country(
     @ColumnInfo(name = "imageurl")
     @SerializedName("imageurl")
     val imageUrl: String?
-){
+) {
     @PrimaryKey(autoGenerate = true)
-    var uuid: Int=0
+    var uuid: Int = 0
 
 }
 

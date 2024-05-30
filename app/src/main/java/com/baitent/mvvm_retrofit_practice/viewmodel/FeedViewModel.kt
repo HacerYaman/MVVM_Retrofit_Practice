@@ -2,7 +2,7 @@ package com.baitent.mvvm_retrofit_practice.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.baitent.mvvm_retrofit_practice.api.CountryApiService
+import com.baitent.mvvm_retrofit_practice.service.CountryApiService
 import com.baitent.mvvm_retrofit_practice.models.Country
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable

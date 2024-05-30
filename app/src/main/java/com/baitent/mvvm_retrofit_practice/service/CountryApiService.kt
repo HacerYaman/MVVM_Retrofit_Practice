@@ -1,4 +1,4 @@
-package com.baitent.mvvm_retrofit_practice.api
+package com.baitent.mvvm_retrofit_practice.service
 
 import com.baitent.mvvm_retrofit_practice.models.Country
 import io.reactivex.Single
