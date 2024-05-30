@@ -30,9 +30,7 @@ class FeedViewModel : ViewModel() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<List<Country>>() {
                     override fun onSuccess(countryList: List<Country>) {
-                        countries.value = countryList
-                        countryError.value = false
-                        countryLoading.value = false
+
                     }
 
                     override fun onError(e: Throwable) {
