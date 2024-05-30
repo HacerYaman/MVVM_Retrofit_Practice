@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.baitent.mvvm_retrofit_practice.R
 import com.baitent.mvvm_retrofit_practice.models.Country
 import com.baitent.mvvm_retrofit_practice.util.downloadImageFromUrl
-import com.baitent.mvvm_retrofit_practice.util.placeholderProgressBar
 
 class CountryAdapter(private val countryList: ArrayList<Country>): RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
 
