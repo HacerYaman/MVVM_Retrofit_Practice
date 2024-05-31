@@ -12,7 +12,7 @@ interface CountryDao {
     //veri tabanına ulaşmak istediğimiz methodların yazıldığı yer
 
     @Insert
-    suspend fun insertAll(vararg  countries : Country) : List<Long>
+    suspend fun insertAll(vararg  countries : Country) : List<Long> //primary key listesi olduğu için long
 
 
     @Query("SELECT * FROM country")

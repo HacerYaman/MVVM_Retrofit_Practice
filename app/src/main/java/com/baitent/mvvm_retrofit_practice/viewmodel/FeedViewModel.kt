@@ -1,15 +1,18 @@
 package com.baitent.mvvm_retrofit_practice.viewmodel
 
+import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.baitent.mvvm_retrofit_practice.service.CountryApiService
 import com.baitent.mvvm_retrofit_practice.models.Country
-import io.reactivex.android.schedulers.AndroidSchedulers
+import com.baitent.mvvm_retrofit_practice.service.CountryDatabase
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
-class FeedViewModel : ViewModel() {
+class FeedViewModel(application: Application) : BaseViewModel(application){
 
      val countries = MutableLiveData<List<Country>>()
      val countryError = MutableLiveData<Boolean>()
@@ -30,7 +33,7 @@ class FeedViewModel : ViewModel() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<List<Country>>() {
                     override fun onSuccess(countryList: List<Country>) {
-
+                        storeInSQLite(countryList)
                     }
 
                     override fun onError(e: Throwable) {
@@ -53,4 +56,21 @@ class FeedViewModel : ViewModel() {
         countryError.value = false
         countryLoading.value = false
     }
+
+    private fun showCountries(countryList: List<Country>){
+        countries.value = countryList
+        countryError.value = false
+        countryLoading.value = false
+    }
+
+    private fun storeInSQLite(list: List<Country>){
+        launch {
+            val dao= CountryDatabase(getApplication()).countryDao()
+            dao.deleteAllCountries()
+            val listLong = dao.insertAll(*list.toTypedArray()) // list -> individual
+
+
+        }
+    }
+
 }
